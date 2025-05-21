@@ -1,1 +1,21 @@
 @import 'tailwindcss';
+
+@theme {
+--color-primary-dark: #1A1F25;   /* ciemny grafit */
+--color-primary-base: #2D3A45;   /* stonowany ciemny niebieski */
+--color-primary-light: #D1D5DB;  /* szary */
+
+--color-accent-blue: #0EA5E9;    /* błękit */
+--color-accent-teal: #10B981;    /* zieleń (emerald) */
+
+--color-text-dark: #F3F4F6;
+--color-text-gray: #9CA3AF;
+--color-text-light: #FFFFFF;
+
+--color-cv-photo: #9CA3AF;
+--color-cv-frame: #D1D5DB;
+
+}
+
+/* first install required plugin */
+/* @plugin "plugin_name" */
