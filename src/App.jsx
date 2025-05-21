@@ -3,11 +3,11 @@ import './index.css'
 function App() {
 
   return (
-    <>
-      <p className="read-the-docs">
+    <div>
+      <p className="text-sm text-zinc-100">
         Hello
       </p>
-    </>
+    </div>
   )
 }
 
