@@ -1,0 +1,20 @@
+[
+	{
+		"role": "Student internship - helpdesk support",
+		"company": "Centrum Informatyczne SGGW, Warsaw",
+		"period": "08.2024",
+		"description": "Supported the Helpdesk department by handle simple user requests, assist with initial hardware configurations, and perform basic computer equipment servicing."
+	},
+	{
+		"role": "Internship - C# Developer",
+		"company": "Centrala Zakładu Ubezpieczeń Społecznych, Warsaw",
+		"period": "07.2023 - 09.2023",
+		"description": "Assisted in software development as a C# Developer, primarily by learning development processes and completing a console application project in C#"
+	},
+	{
+		"role": "Seasonal Internship",
+		"company": "Zarząd Dróg Miasta Krakowa, Cracow",
+		"period": "06.2022 - 09.2022",
+		"description": "Assistance with administrative, office tasks, and archiving using Excel."
+	}
+]
