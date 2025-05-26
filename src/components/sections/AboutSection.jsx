@@ -1,35 +1,91 @@
 import React from 'react';
+import aboutData from '../../data/aboutData.json';
+import AboutBlock from '../AboutBlock.jsx';
 
 const AboutSection = ({ id }) => {
-  return (
-<section id={id} className="min-h-screen bg-white pt-20">
-  <div className="container mx-auto px-4 py-20">
-    <h2 className="text-3xl font-bold text-primary-dark mb-12 text-center">About me</h2>
-    
-    <div className="grid md:grid-cols-2 gap-12">
-      <div>
-        <h3 className="text-xl font-semibold text-primary-dark mb-4">A few words</h3>
-        <p className="text-text-gray mb-6">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque, mollitia. Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam repellat obcaecati labore ex nobis quo, odio corrupti enim alias unde!
-        </p>
-      </div>
-      
-      <div>
-        <h3 className="text-xl font-semibold text-primary-dark mb-4">Skills</h3>
-        <ul className="space-y-3">
-          {['React', 'Java Script', 'Tailwind CSS', 'Node.js'].map((skill) => (
-            <li key={skill} className="flex items-center">
-              <span className="w-2 h-2 bg-accent-teal rounded-full mr-3"></span>
-              <span className="text-primary-dark">{skill}</span>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
+	const { aboutText, education, technicalSkills, additionalSkills } = aboutData;
 
-  );
+	return (
+		<section
+			id={id}
+			className='min-h-screen bg-primary-base py-16 md:pt-20 px-4 sm:px-6 lg:px-8'
+		>
+			<div className='max-w-5xl mx-auto'>
+				<h2 className='text-text-light text-2xl sm:text-4xl font-bold mb-16 text-center'>
+					About Me
+				</h2>
+
+				<div className='grid grid-cols-1 gap-y-12'>
+					{/* Who I Am */}
+					<AboutBlock title='Who I Am'>
+						{aboutText.map((text, idx) => (
+							<p key={idx} className='text-text-gray mb-4 leading-relaxed'>
+								{text}
+							</p>
+						))}
+					</AboutBlock>
+
+					{/* Grid of 3 columns */}
+					<div className='grid grid-cols-1 md:grid-cols-3 gap-8'>
+						{/* Education */}
+						<AboutBlock title='Education' dotSize='w-3 h-3'>
+							<ul className='space-y-4 text-sm'>
+								{education.map((edu, idx) => (
+									<li key={idx}>
+										<h4 className='text-accent-blue font-medium'>
+											{edu.title}
+										</h4>
+										<p className='text-text-gray font-light'>{edu.years}</p>
+										<p className='text-text-gray'>{edu.description}</p>
+									</li>
+								))}
+							</ul>
+						</AboutBlock>
+
+						{/* Technical Skills */}
+						<AboutBlock title='Technical Skills' dotSize='w-3 h-3'>
+							<ul className='space-y-3 text-sm'>
+								{technicalSkills.map((skill, idx) => (
+									<li key={idx} className='flex items-start'>
+										<span className='text-accent-blue mr-2 leading-[1.6]'>
+											•
+										</span>
+										<span className='text-text-gray'>{skill}</span>
+									</li>
+								))}
+							</ul>
+						</AboutBlock>
+
+						{/* Additional Skills */}
+						<AboutBlock title='Additional Skills' dotSize='w-3 h-3'>
+							<div className='space-y-4 text-sm'>
+								<div>
+									<h4 className='text-accent-blue font-medium mb-1'>
+										Languages
+									</h4>
+									<ul className='text-text-gray space-y-1'>
+										{additionalSkills.languages.map((lang, idx) => (
+											<li key={idx}>{lang}</li>
+										))}
+									</ul>
+								</div>
+								<div>
+									<h4 className='text-accent-blue font-medium mb-1'>
+										Certificates
+									</h4>
+									<ul className='text-text-gray space-y-1'>
+										{additionalSkills.certificates.map((cert, idx) => (
+											<li key={idx}>{cert}</li>
+										))}
+									</ul>
+								</div>
+							</div>
+						</AboutBlock>
+					</div>
+				</div>
+			</div>
+		</section>
+	);
 };
 
 export default AboutSection;
