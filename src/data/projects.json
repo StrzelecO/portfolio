@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "title": "StudentCards Web Application",
+    "description": "Collaborative flashcard web app developed in a team of three. Features interactive games, flashcard creation, and full CRUD.",
+    "keywords": ["React", "Tailwind CSS", "Django", "Node.js", "Full-stack", "Team Project"],
+    "githubLink": "https://github.com/StudentCards/StudentCards"
+  },
+  {
+    "id": 2,
+    "title": "Water Quality Analysis",
+    "description": "ML project evaluating water potability using classification. Compared ML models for consumption prediction.",
+    "keywords": ["Machine Learning", "Python", "Jupyter", "Data Analysis", "Classification"],
+    "githubLink": "https://github.com/StrzelecO/water-quality-classification"
+  },
+  {
+    "id": 3,
+    "title": "Music Player App",
+    "description": "Interactive music player with playlist management and audio controls built using React.",
+    "keywords": ["React", "Frontend", "Web Application"],
+    "githubLink": "https://github.com/StrzelecO/music-player"
+  },
+  {
+    "id": 4,
+    "title": "Taylor Swift Song Ranking",
+    "description": "Data analysis of radio hit potential using ranking methods. Identified features influencing popularity.",
+    "keywords": ["Data Analysis", "Python", "Excel", "Jupyter", "Statistics"],
+    "githubLink": "https://github.com/StrzelecO/taylor-swift-song-ranking"
+  }
+]

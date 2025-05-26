@@ -1,42 +1,53 @@
 import React from 'react';
+import Project from '../Project';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/pagination';
+
+import projects from '../../data/projects.json';
 
 const ProjectsSection = ({ id }) => {
-  const projects = [
-    {
-      title: "Project A",
-      description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias!',
-      tags: ["React", "Node.js", "MongoDB"]
-    },
-    {
-      title: "Project B",
-      description: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere dignissimos fuga repudiandae possimus enim nulla non, atque aut quod.',
-      tags: ["TypeScript", "Chart.js", "Firebase"]
-    }
-  ];
+	return (
+		<section
+			id={id}
+			className='min-h-screen bg-primary-dark py-16 md:pt-20 px-4 sm:px-6 lg:px-8'
+		>
+			<div className='max-w-5xl mx-auto'>
+				<h2 className='text-text-light text-2xl sm:text-4xl font-bold mb-16 text-center'>
+					Projects
+				</h2>
 
-  return (
-    <section id={id} className="min-h-screen bg-primary-light pt-20">
-      <div className="container mx-auto px-4 py-20">
-        <h2 className="text-3xl font-bold text-primary-dark mb-12 text-center">Projects</h2>
-        
-        <div className="grid md:grid-cols-2 gap-8">
-          {projects.map((project, index) => (
-            <div key={index} className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-              <h3 className="text-xl font-semibold text-primary-dark mb-2">{project.title}</h3>
-              <p className="text-text-gray mb-4">{project.description}</p>
-              <div className="flex flex-wrap gap-2">
-                {project.tags.map(tag => (
-                  <span key={tag} className="bg-primary-base text-text-light text-xs px-3 py-1 rounded-full">
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
+				{/* Small devices */}
+				<div className='block sm:hidden'>
+					<Swiper
+						modules={[Pagination]}
+						pagination={{
+							clickable: true,
+						}}
+						spaceBetween={16}
+						slidesPerView={1}
+						className='!pb-10'
+					>
+						{projects.map(project => (
+							<SwiperSlide key={project.id}>
+								<div className='md:min-h-screen flex items-start'>
+									<Project project={project} />
+								</div>
+							</SwiperSlide>
+						))}
+					</Swiper>
+				</div>
+
+				{/* Normal devices (tablet, PC)*/}
+				<div className='hidden sm:grid md:grid-cols-2 gap-8'>
+					{projects.map(project => (
+						<Project project={project} key={project.id} />
+					))}
+				</div>
+			</div>
+		</section>
+	);
 };
 
 export default ProjectsSection;
