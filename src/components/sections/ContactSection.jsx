@@ -1,41 +1,49 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { policies } from '../../data/polices.jsx';
 
 const ContactSection = ({ id }) => {
+	const [modal, setModal] = useState(null);
+
 	return (
-		<section id={id} className='bg-primary-dark py-8'>
+		<section id={id} className='bg-primary-dark py-8 pb-24'>
 			<div className='container mx-auto px-4'>
 				<h2 className='text-2xl font-bold text-text-light mb-6 text-center'>
 					Contact
 				</h2>
 
 				<div className='flex flex-col sm:flex-row justify-center sm:items-center gap-12 sm:gap-32 px-8 sm:px-12'>
-					{/* Lewa kolumna - telefon i email */}
+					{/* Left column - phone and email */}
 					<div className='flex flex-col gap-6'>
-						{/* Telefon */}
-						<a
+						{/* Phone */}
+						<p
+							href='tel:+48577336146'
 							className='flex items-center gap-3 text-text-gray hover:text-accent-blue transition-colors text-lg'
+							aria-label="Oliwia Strzelec's phone number"
 						>
 							<PhoneIcon className='w-6 h-6' />
 							<span>+48 577 336 146</span>
-						</a>
+						</p>
 
 						{/* Email */}
-						<a
+						<p
+							href='mailto:strzelecoliwia24@email.com'
 							className='flex items-center gap-3 text-text-gray hover:text-accent-blue transition-colors text-lg'
+							aria-label="Oliwia Strzelec's email"
 						>
 							<EmailIcon className='w-6 h-6' />
 							<span>strzelecoliwia24@email.com</span>
-						</a>
+						</p>
 					</div>
 
-					{/* Prawa kolumna - GitHub i LinkedIn */}
+					{/* Right column - GitHub and LinkedIn */}
 					<div className='flex flex-col justify-start gap-6'>
 						{/* GitHub */}
 						<a
-							href='https://github.com/twojprofil'
+							href='https://github.com/StrzelecO'
 							target='_blank'
 							rel='noopener noreferrer'
 							className='flex items-center gap-3 text-text-gray hover:text-accent-teal transition-colors text-lg'
+							aria-label="Olivia Strzelec's GitHub profile"
 						>
 							<GitHubIcon className='w-6 h-6' />
 							<span>GitHub</span>
@@ -43,10 +51,11 @@ const ContactSection = ({ id }) => {
 
 						{/* LinkedIn */}
 						<a
-							href='https://linkedin.com/in/twojprofil'
+							href='https://www.linkedin.com/in/oliwia-strzelec-64a26a27a/'
 							target='_blank'
 							rel='noopener noreferrer'
 							className='flex items-center gap-3 text-text-gray hover:text-accent-teal transition-colors text-lg'
+							aria-label="Olivia Strzelec's LinkedIn profile"
 						>
 							<LinkedInIcon className='w-6 h-6' />
 							<span>LinkedIn</span>
@@ -54,17 +63,64 @@ const ContactSection = ({ id }) => {
 					</div>
 				</div>
 
+				{/* Footer with legal links */}
 				<div className='mt-8 pt-6 border-t border-primary-base'>
 					<p className='text-text-gray text-center'>
-						© {new Date().getFullYear()} Portfolio. All rights reserved. 
+						© {new Date().getFullYear()} Oliwia Strzelec - Portfolio. All rights
+						reserved.
+					</p>
+					<div className='flex justify-center gap-4 mt-2'>
+						<button
+							onClick={() => setModal('privacy')}
+							className='text-sm text-accent-teal hover:underline hover:cursor-pointer'
+						>
+							Privacy Policy
+						</button>
+						<button
+							onClick={() => setModal('cookies')}
+							className='text-sm text-accent-teal hover:underline hover:cursor-pointer'
+						>
+							Cookie Policy
+						</button>
+					</div>
+					<p className='text-text-gray text-center text-xs mt-2'>
+						This website uses only essential cookies for language preferences
 					</p>
 				</div>
 			</div>
+
+			{modal && (
+				<div className='fixed inset-0 z-50 flex items-center justify-center p-4'>
+					<div
+						className='bg-primary-dark rounded-lg max-w-md w-full p-6 max-h-[80vh] overflow-y-auto'
+						style={{
+							boxShadow: '0 0 0 100vmax rgba(0, 0, 0, 0.7)',
+							border: '1px solid rgba(255, 255, 255, 0.1)',
+						}}
+					>
+						<div className='flex justify-between items-center mb-4'>
+							<h3 className='text-text-light text-lg font-bold'>
+								{policies[modal].title}
+							</h3>
+							<button
+								onClick={() => setModal(null)}
+								className='text-text-gray hover:text-white hover:cursor-pointer'
+								aria-label='Close policy'
+							>
+								✕
+							</button>
+						</div>
+						<div className='text-sm text-text-gray'>
+							{policies[modal].content}
+						</div>
+					</div>
+				</div>
+			)}
 		</section>
 	);
 };
 
-// SVG Icon Components
+// Icon components remain the same as in your original code
 const PhoneIcon = () => (
 	<svg
 		xmlns='http://www.w3.org/2000/svg'

@@ -11,6 +11,7 @@ const HeaderSection = () => {
 		<section
 			id='header'
 			className='min-h-screen bg-primary-dark flex items-center justify-center py-16'
+			aria-label="Personal introduction section"
 		>
 			<div className='container mx-auto px-4 flex flex-col md:flex-row items-center gap-12'>
 				{/* Photo */}
@@ -19,11 +20,15 @@ const HeaderSection = () => {
 						<div className='w-64 h-64 lg:w-80 lg:h-80 2xl:w-96 2xl:h-96 rounded-full overflow-hidden border-4 border-cv-frame'>
 							<img
 								src={CVphoto}
-								alt='Twoje zdjęcie'
+								alt='Portrait of Oliwia Strzelec'
 								className='w-full h-full object-cover'
+								aria-label="Profile picture"
 							/>
 						</div>
-						<div className='absolute -inset-4 border-2 border-cv-photo rounded-full pointer-events-none'></div>
+						<div 
+							className='absolute -inset-4 border-2 border-cv-photo rounded-full pointer-events-none'
+							aria-hidden="true"
+						></div>
 					</div>
 				</div>
 
@@ -46,7 +51,8 @@ const HeaderSection = () => {
 
 					<button
 						onClick={handleDownloadCV}
-						className='px-6 py-2 bg-accent-blue hover:bg-accent-teal text-text-light rounded-md font-medium transition-colors shadow-lg hover:shadow-xl'
+						className='px-6 py-2 bg-accent-blue hover:bg-accent-teal text-text-light rounded-md font-medium transition-colors shadow-lg hover:shadow-xl hover:cursor-pointer'
+						aria-label="Download curriculum vitae in PDF format"
 					>
 						Download CV (PDF)
 					</button>
