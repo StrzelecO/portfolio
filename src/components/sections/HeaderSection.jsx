@@ -1,5 +1,5 @@
 import React from 'react';
-import yourPhoto from '../../../public/assets/cv_pic.png';
+import yourPhoto from '/assets/cv_pic.png';
 
 const HeaderSection = ({ id }) => {
 	const scrollToAbout = () => {

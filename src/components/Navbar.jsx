@@ -1,32 +1,46 @@
 import React, { useState, useEffect } from 'react';
 
+const SECTIONS = ['header', 'about', 'projects', 'experience', 'contact'];
+
 const Navbar = () => {
 	const [activeSection, setActiveSection] = useState('header');
 	const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
 	useEffect(() => {
 		const handleScroll = () => {
-			const sections = ['header', 'about', 'projects', 'experience', 'footer'];
-			const scrollPosition = window.scrollY + 100;
+			const scrollPosition = window.scrollY + window.innerHeight * 0.3; // Używamy 30% wysokości okna
+			const documentHeight = document.documentElement.scrollHeight;
+			let newActiveSection = activeSection; // Zachowaj obecną sekcję jeśli nic nie znajdziemy
 
-			for (const section of sections) {
+			// Sprawdź czy jesteśmy na samym dole strony
+			if (window.innerHeight + window.scrollY >= documentHeight - 100) {
+				setActiveSection('contact');
+				return;
+			}
+
+			// Normalne sprawdzanie sekcji
+			for (let i = SECTIONS.length - 1; i >= 0; i--) {
+				const section = SECTIONS[i];
 				const element = document.getElementById(section);
 				if (element) {
 					const { offsetTop, offsetHeight } = element;
 					if (
-						scrollPosition >= offsetTop &&
-						scrollPosition < offsetTop + offsetHeight
+						scrollPosition >=
+						offsetTop + (section === 'contact' ? 0 : offsetHeight * 0.3)
 					) {
-						setActiveSection(section);
+						newActiveSection = section;
 						break;
 					}
 				}
 			}
+
+			setActiveSection(newActiveSection);
 		};
 
 		window.addEventListener('scroll', handleScroll);
+		handleScroll(); // Wywołaj na początku
 		return () => window.removeEventListener('scroll', handleScroll);
-	}, []);
+	}, [activeSection]); // Dodajemy activeSection do zależności
 
 	const scrollToSection = sectionId => {
 		const element = document.getElementById(sectionId);
@@ -55,22 +69,20 @@ const Navbar = () => {
 
 					{/* Desktop Navigation */}
 					<ul className='hidden md:flex space-x-4'>
-						{['header', 'about', 'projects', 'experience', 'footer'].map(
-							section => (
-								<li key={section}>
-									<button
-										onClick={() => scrollToSection(section)}
-										className={`capitalize px-4 py-2 rounded-md text-sm font-medium transition-colors ${
-											activeSection === section
-												? 'text-accent-blue bg-primary-base'
-												: 'text-text-light hover:text-accent-teal hover:bg-primary-base'
-										} hover:cursor-pointer`}
-									>
-										{section === 'header' ? 'Home' : section}
-									</button>
-								</li>
-							)
-						)}
+						{SECTIONS.map(section => (
+							<li key={section}>
+								<button
+									onClick={() => scrollToSection(section)}
+									className={`capitalize px-4 py-2 rounded-md text-sm font-medium transition-colors ${
+										activeSection === section
+											? 'text-accent-blue bg-primary-base'
+											: 'text-text-light hover:text-accent-teal hover:bg-primary-base'
+									} hover:cursor-pointer`}
+								>
+									{section === 'header' ? 'Home' : section}
+								</button>
+							</li>
+						))}
 					</ul>
 
 					{/* Mobile menu button */}
@@ -109,22 +121,20 @@ const Navbar = () => {
 				{/* Mobile Navigation */}
 				<div className={`md:hidden ${mobileMenuOpen ? 'block' : 'hidden'}`}>
 					<ul className='px-2 pt-2 pb-4 space-y-1'>
-						{['header', 'about', 'projects', 'experience', 'footer'].map(
-							section => (
-								<li key={section}>
-									<button
-										onClick={() => scrollToSection(section)}
-										className={`capitalize block px-3 py-2 rounded-md text-base font-medium w-full text-left ${
-											activeSection === section
-												? 'text-accent-blue bg-primary-base'
-												: 'text-text-light hover:text-accent-teal hover:bg-primary-base'
-										} hover:cursor-pointer`}
-									>
-										{section === 'header' ? 'Home' : section}
-									</button>
-								</li>
-							)
-						)}
+						{SECTIONS.map(section => (
+							<li key={section}>
+								<button
+									onClick={() => scrollToSection(section)}
+									className={`capitalize block px-3 py-2 rounded-md text-base font-medium w-full text-left ${
+										activeSection === section
+											? 'text-accent-blue bg-primary-base'
+											: 'text-text-light hover:text-accent-teal hover:bg-primary-base'
+									} hover:cursor-pointer`}
+								>
+									{section === 'header' ? 'Home' : section}
+								</button>
+							</li>
+						))}
 					</ul>
 				</div>
 			</div>

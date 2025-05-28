@@ -4,7 +4,7 @@ import HeaderSection from './components/sections/HeaderSection.jsx';
 import AboutSection from './components/sections/AboutSection.jsx';
 import ProjectsSection from './components/sections/ProjectsSection.jsx';
 import ExperienceSection from './components/sections/ExperienceSection.jsx';
-import FooterSection from './components/sections/FooterSection.jsx';
+import ContactSection from './components/sections/ContactSection.jsx';
 
 function App() {
   return (
@@ -16,7 +16,7 @@ function App() {
         <AboutSection id="about" />
         <ProjectsSection id="projects" />
         <ExperienceSection id="experience" />
-        <FooterSection id="footer" />
+        <ContactSection id="contact" />
       </main>
     </div>
   );
