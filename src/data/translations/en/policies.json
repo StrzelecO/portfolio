@@ -1,0 +1,53 @@
+{
+  "privacy": {
+    "title": "Privacy Policy",
+    "content": {
+      "controller": {
+        "heading": "Data Controller:",
+        "text": "Olivia Strzelec<br />Contact: strzelecoliwia24@email.com"
+      },
+      "collection": {
+        "heading": "Data Collection:",
+        "text": "This portfolio does not collect personal data. The only information stored is your language preference in browser's local storage."
+      },
+      "legal": {
+        "heading": "Legal Basis:",
+        "text": "Processing under GDPR Article 6(1)(f) - legitimate interest (necessary for website functionality)."
+      },
+      "rights": {
+        "heading": "Your Rights:",
+        "text": "Under GDPR, you may: request access to your data, request data deletion, contact us via email"
+      }
+    }
+  },
+  "cookies": {
+    "title": "Cookie Policy",
+    "content": {
+      "used": {
+        "heading": "Essential Cookies:",
+        "table": {
+          "headers": ["Name", "Purpose", "Duration", "Type"],
+          "rows": [
+            {
+              "name": "i18n_lang",
+              "purpose": "Stores language preference",
+              "duration": "30 days",
+              "type": "Strictly Necessary"
+            }
+          ]
+        }
+      },
+      "managing": {
+        "heading": "Managing Cookies:",
+        "text": "You can delete cookies in your browser settings:",
+        "browsers": [
+          "Chrome: Settings → Privacy → Clear browsing data",
+          "Firefox: Options → Privacy → Cookies"
+        ]
+      }
+    }
+  },
+  "ariaLabels": {
+    "closeModal": "Close policy"
+  }
+}

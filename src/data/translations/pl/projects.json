@@ -1,0 +1,59 @@
+{
+	"sectionTitle": "Projekty",
+	"ariaLabels": {
+		"section": "Sekcja prezentacji projektów",
+		"mobileCarousel": "Karuzela projektów na urządzenia mobilne",
+		"swipeInstruction": "Przesuwaj, aby zobaczyć projekty",
+		"desktopGrid": "Siatka projektów na komputery",
+		"projectItem": "Projekt: {{title}}"
+	},
+	"projects": [
+		{
+			"id": 1,
+			"title": "Aplikacja webowa StudentCards",
+			"description": "Aplikacja do fiszek internetowych opracowana w trzyosobowym zespole. Zawiera gry interaktywne, tworzenie fiszek i pełne CRUD.",
+			"keywords": [
+				"React",
+				"Tailwind CSS",
+				"Django",
+				"Node.js",
+				"Full-stack",
+				"Projekt zespołowy"
+			],
+			"githubLink": "https://github.com/StudentCards/StudentCards"
+		},
+		{
+			"id": 2,
+			"title": "Klasyfikacja binarna zdatności wody",
+			"description": "Projekt ML oceniający przydatność wody do picia przy użyciu klasyfikacji binarnej. Porównano modele ML do przewidywania jej zdatności do spożycia.",
+			"keywords": [
+				"Machine Learning",
+				"Python",
+				"Jupyter",
+				"Analiza Danych",
+				"Klasyfikacja"
+			],
+			"githubLink": "https://github.com/StrzelecO/water-quality-classification"
+		},
+		{
+			"id": 3,
+			"title": "Odtwarzacz muzyki",
+			"description": "Interaktywny odtwarzacz muzyki z zarządzaniem playlistami i kontrolą dźwięku zbudowany w React.",
+			"keywords": ["React", "Frontend", "Tailwind CSS", "Web Application"],
+			"githubLink": "https://github.com/StrzelecO/music-player"
+		},
+		{
+			"id": 4,
+			"title": "Ranking piosenek Taylor Swift",
+			"description": "Porównanie metod porządkowania liniowego - ranking piosenek pod względem spełniania cech hitu radiowego",
+			"keywords": [
+				"Analiza Danych",
+				"Python",
+				"Excel",
+				"Jupyter",
+				"Statystyka"
+			],
+			"githubLink": "https://github.com/StrzelecO/taylor-swift-song-ranking"
+		}
+	]
+}

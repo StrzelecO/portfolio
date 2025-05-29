@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 
-const SECTIONS = ['header', 'about', 'projects', 'experience', 'contact'];
+const SECTIONS = ['about', 'projects', 'experience', 'contact'];
 
 const Navbar = () => {
 	const [activeSection, setActiveSection] = useState('header');
 	const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+	const { t } = useTranslation('navbar');
 
 	useEffect(() => {
 		const handleScroll = () => {
@@ -53,34 +55,34 @@ const Navbar = () => {
 
 	return (
 		<nav
-			aria-label="Main navigation"
+			aria-label={t('ariaLabels.mainNav')}
 			className={`fixed w-full z-50 transition-all duration-300 bg-primary-dark shadow-lg py-4`}
 		>
-			<div className='container mx-auto px-4'>
+			<div className='container mx-auto px-4 xl:px-16'>
 				<div className='flex justify-between items-center'>
 					{/* Logo */}
 					<a
-						href="#header"
-						onClick={(e) => {
+						href='#header'
+						onClick={e => {
 							e.preventDefault();
 							scrollToSection('header');
 						}}
 						className='text-2xl font-bold text-text-light cursor-pointer hover:text-accent-blue transition-colors'
-						aria-label="Home, navigate to top of page"
+						aria-label={t('ariaLabels.home')}
 					>
-						Portfolio
+						{t('logo')}
 					</a>
 
 					{/* Desktop Navigation */}
-					<ul 
+					<ul
 						className='hidden md:flex space-x-4'
-						role="menubar"
-						aria-label="Main sections"
+						role='menubar'
+						aria-label={t('ariaLabels.sections')}
 					>
 						{SECTIONS.map(section => (
-							<li key={section} role="none">
+							<li key={section} role='none'>
 								<button
-									role="menuitem"
+									role='menuitem'
 									aria-current={activeSection === section ? 'page' : undefined}
 									onClick={() => scrollToSection(section)}
 									className={`capitalize px-4 py-2 rounded-md text-sm font-medium transition-colors ${
@@ -89,7 +91,7 @@ const Navbar = () => {
 											: 'text-text-light hover:text-accent-teal hover:bg-primary-base'
 									} hover:cursor-pointer`}
 								>
-									{section === 'header' ? 'Home' : section}
+									{t(`sections.${section}`)}
 								</button>
 							</li>
 						))}
@@ -100,16 +102,18 @@ const Navbar = () => {
 						<button
 							onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
 							className='text-text-light hover:text-accent-blue focus:outline-none hover:cursor-pointer'
-							aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
+							aria-label={t(
+								`ariaLabels.menuToggle.${mobileMenuOpen ? 'close' : 'open'}`
+							)}
 							aria-expanded={mobileMenuOpen}
-							aria-controls="mobile-menu"
+							aria-controls='mobile-menu'
 						>
 							<svg
 								className='h-6 w-6'
 								fill='none'
 								viewBox='0 0 24 24'
 								stroke='currentColor'
-								aria-hidden="true"
+								aria-hidden='true'
 							>
 								{mobileMenuOpen ? (
 									<path
@@ -132,16 +136,16 @@ const Navbar = () => {
 				</div>
 
 				{/* Mobile Navigation */}
-				<div 
-					id="mobile-menu"
+				<div
+					id='mobile-menu'
 					className={`md:hidden ${mobileMenuOpen ? 'block' : 'hidden'}`}
-					role="menu"
+					role='menu'
 				>
 					<ul className='px-2 pt-2 pb-4 space-y-1'>
 						{SECTIONS.map(section => (
-							<li key={section} role="none">
+							<li key={section} role='none'>
 								<button
-									role="menuitem"
+									role='menuitem'
 									aria-current={activeSection === section ? 'page' : undefined}
 									onClick={() => scrollToSection(section)}
 									className={`capitalize block px-3 py-2 rounded-md text-base font-medium w-full text-left ${
@@ -150,7 +154,7 @@ const Navbar = () => {
 											: 'text-text-light hover:text-accent-teal hover:bg-primary-base'
 									} hover:cursor-pointer`}
 								>
-									{section === 'header' ? 'Home' : section}
+									{t(`sections.${section}`)}
 								</button>
 							</li>
 						))}

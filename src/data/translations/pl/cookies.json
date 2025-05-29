@@ -1,0 +1,12 @@
+{
+  "banner": {
+    "title": "Zgoda na pliki cookies",
+    "description": "Ta strona używa plików cookies w celu poprawy funkcjonalności.",
+    "accept": "Akceptuję",
+    "decline": "Odrzuć",
+    "ariaLabels": {
+      "accept": "Akceptuję pliki cookies",
+      "decline": "Odrzuć pliki cookies"
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "name": "Oliwia",
+  "surname": "Strzelec",
+  "title": "Computer Science Student / Information Systems Engineering",
+  "description": "Bridging theoretical knowledge with practical solutions through code. Passionate about problem-solving and turning complex concepts into functional applications.",
+  "downloadCv": "Download CV (PDF)",
+  "ariaLabels": {
+    "section": "Personal introduction section",
+    "photo": "Portrait of Oliwia Strzelec",
+    "cvButton": "Download curriculum vitae in PDF format"
+  }
+}

@@ -1,0 +1,57 @@
+{
+	"sectionTitle": "About Me",
+	"ariaLabels": {
+		"section": "About me section",
+		"personalDescription": "Personal description",
+		"skillsEducation": "Skills and education information",
+		"education": "Education background",
+		"educationItem": "Education: {{title}}",
+		"technicalSkills": "Technical skills list",
+		"technicalSkillItem": "Technical skill: {{skill}}",
+		"additionalSkills": "Additional skills and certificates",
+		"languages": "Language skills",
+		"languageItem": "Language: {{lang}}",
+		"certificates": "Certifications",
+		"certificateItem": "Certificate: {{cert}}"
+	},
+	"titles": {
+		"whoIAm": "Who I Am",
+		"education": "Education",
+		"technicalSkills": "Technical Skills",
+		"additionalSkills": "Additional Skills",
+		"languages": "Languages",
+		"certificates": "Certificates"
+	},
+	"aboutText": [
+		"As an ambitious IT student, I'm eager to apply my theoretical knowledge in a practical setting. My academic projects have given me solid foundations in programming and system design.",
+		"What sets me apart is my quick learning ability, attention to detail, and passion for technology. I thrive in team environments where I can both contribute and learn from others.",
+		"Currently looking for an internship or junior position where I can grow my skills while adding value to your team."
+	],
+	"education": [
+		{
+			"title": "Warsaw University of Life Sciences",
+			"years": "2022 - Present",
+			"description": "Bachelor of Computer Science"
+		},
+		{
+			"title": "1 LO High School, Bochnia",
+			"years": "2019 - 2022",
+			"description": "Mathematics, Physics and English profiled class"
+		}
+	],
+	"technicalSkills": [
+		"Frontend development: HTML, CSS, Tailwind CSS, SCSS",
+		"JavaScript",
+		"React JS",
+		"Basic knowledge of Python, SQL, C#",
+		"Linux RHEL basics",
+		"Driving license"
+	],
+	"additionalSkills": {
+		"languages": ["Polish (Native)", "English (C1)"],
+		"certificates": [
+			"Red Hat System Administration I (RH124) (certificate of attendance)",
+			"Red Hat System Administration II (RH134) (certificate of attendance)"
+		]
+	}
+}

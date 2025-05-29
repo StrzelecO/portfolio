@@ -1,0 +1,12 @@
+{
+  "name": "Oliwia",
+  "surname": "Strzelec",
+  "title": "Studentka Informatyki / Inżynieria Systemów Informacyjnych",
+  "description": "Łączę wiedzę teoretyczną z praktycznymi rozwiązaniami poprzez kod. Pasjonuję się rozwiązywaniem problemów i przekształcaniem złożonych koncepcji w funkcjonalne aplikacje.",
+  "downloadCv": "Pobierz CV (PDF)",
+  "ariaLabels": {
+    "section": "Krótki opis",
+    "photo": "Portret Oliwii Strzelec",
+    "cvButton": "Pobierz CV w formacie PDF"
+  }
+}

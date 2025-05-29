@@ -1,0 +1,53 @@
+{
+  "privacy": {
+    "title": "Polityka Prywatności",
+    "content": {
+      "controller": {
+        "heading": "Administrator Danych:",
+        "text": "Olivia Strzelec<br />Kontakt: strzelecoliwia24@email.com"
+      },
+      "collection": {
+        "heading": "Gromadzenie Danych:",
+        "text": "To portfolio nie zbiera danych osobowych. Jedyną przechowywaną informacją są Twoje preferencje językowe w pamięci przeglądarki."
+      },
+      "legal": {
+        "heading": "Podstawa Prawna:",
+        "text": "Przetwarzanie zgodnie z art. 6 ust. 1 lit. f) RODO - uzasadniony interes (niezbędne do funkcjonowania strony)."
+      },
+      "rights": {
+        "heading": "Twoje Prawa:",
+        "text": "Zgodnie z RODO masz prawo do: dostępu do swoich danych, żądania usunięcia danych, kontaktu poprzez email"
+      }
+    }
+  },
+  "cookies": {
+    "title": "Polityka Cookies",
+    "content": {
+      "used": {
+        "heading": "Niezbędne Ciasteczka:",
+        "table": {
+          "headers": ["Nazwa", "Cel", "Czas przechowywania", "Typ"],
+          "rows": [
+            {
+              "name": "i18n_lang",
+              "purpose": "Przechowuje preferencje językowe",
+              "duration": "30 dni",
+              "type": "Niezbędne"
+            }
+          ]
+        }
+      },
+      "managing": {
+        "heading": "Zarządzanie Ciasteczkami:",
+        "text": "Możesz usunąć ciasteczka w ustawieniach przeglądarki:",
+        "browsers": [
+          "Chrome: Ustawienia → Prywatność → Wyczyść dane przeglądania",
+          "Firefox: Opcje → Prywatność → Ciasteczka"
+        ]
+      }
+    }
+  },
+  "ariaLabels": {
+    "closeModal": "Zamknij politykę"
+  }
+}

@@ -1,0 +1,30 @@
+{
+	"sectionTitle": "Doświadczenie zawodowe",
+	"ariaLabels": {
+		"section": "Sekcja doświadczenia zawodowego",
+		"experienceList": "Lista doświadczeń zawodowych",
+		"experienceItem": "Doświadczenie w firmie {{company}}",
+		"companyInfo": "Firma: {{company}}, Okres: {{period}}",
+		"jobDescription": "Opis stanowiska"
+	},
+	"experiences": [
+		{
+			"role": "Praktyka studencka - pomoc helpdesk",
+			"company": "Centrum Informatyczne SGGW, Warszawa",
+			"period": "08.2024",
+			"description": "Wspieracie dla działu Helpdesk, obsługując proste zgłoszenia użytkowników, pomagając w początkowej konfiguracji sprzętu oraz wykonując podstawowe serwisowanie sprzętu komputerowego."
+		},
+		{
+			"role": "Praktyka - C# Developer",
+			"company": "Centrala Zakładu Ubezpieczeń Społecznych, Warszawa",
+			"period": "07.2023 - 09.2023",
+			"description": "Wsparcie przy rozwoju oprogramowania w języku C# oraz zapoznanie się z procesem jego wytwarzania. Realizacja projektu do kompresowania plików w postaci prostej  aplikacji konsolowej."
+		},
+		{
+			"role": "Praktyka",
+			"company": "Zarząd Dróg Miasta Krakowa, Kraków",
+			"period": "06.2022 - 09.2022",
+			"description": "Pomoc w zadaniach administracyjnych, biurowych oraz archiwizacyjnych z użyciem programu Excel."
+		}
+	]
+}

@@ -1,0 +1,12 @@
+{
+  "banner": {
+    "title": "Cookie Consent",
+    "description": "This website uses cookies to improve functionality.",
+    "accept": "Accept",
+    "decline": "Decline",
+    "ariaLabels": {
+      "accept": "Accept cookies",
+      "decline": "Decline cookies"
+    }
+  }
+}

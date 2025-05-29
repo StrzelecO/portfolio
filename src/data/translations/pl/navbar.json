@@ -1,0 +1,19 @@
+{
+  "ariaLabels": {
+    "mainNav": "Główne menu nawigacyjne",
+    "sections": "Główne sekcje",
+    "home": "Strona główna, przejdź na początek strony",
+    "menuToggle": {
+      "open": "Otwórz menu",
+      "close": "Zamknij menu"
+    }
+  },
+  "logo": "Portfolio",
+  "sections": {
+    "header": "Strona główna",
+    "about": "O mnie",
+    "projects": "Projekty",
+    "experience": "Doświadczenie",
+    "contact": "Kontakt"
+  }
+}

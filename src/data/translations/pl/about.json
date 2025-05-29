@@ -1,0 +1,57 @@
+{
+	"sectionTitle": "O Mnie",
+	"ariaLabels": {
+		"section": "Sekcja o mnie",
+		"personalDescription": "Opis",
+		"skillsEducation": "Informacje o umiejętnościach i edukacji",
+		"education": "Wykształcenie",
+		"educationItem": "Edukacja: {{title}}",
+		"technicalSkills": "Lista umiejętności technicznych",
+		"technicalSkillItem": "Umiejętność techniczna: {{skill}}",
+		"additionalSkills": "Dodatkowe umiejętności i certyfikaty",
+		"languages": "Znajomość języków",
+		"languageItem": "Język: {{lang}}",
+		"certificates": "Certyfikaty",
+		"certificateItem": "Certyfikat: {{cert}}"
+	},
+	"titles": {
+		"whoIAm": "O mnie",
+		"education": "Wykształcenie",
+		"technicalSkills": "Umiejętności Techniczne",
+		"additionalSkills": "Dodatkowe Umiejętności",
+		"languages": "Języki",
+		"certificates": "Certyfikaty"
+	},
+	"aboutText": [
+		"Jestem pasjonatką informatyki, studentką Inżynierii Systemów Informacyjnych.",
+		"Łączę solidne podstawy teoretyczne z praktycznymi umiejętnościami rozwiązywania problemów.",
+		"Uwielbiam przekształcać złożone problemy w rozwiązania programistyczne."
+	],
+	"education": [
+		{
+			"title": "Szkoła Główna Gospodarstwa Wiejskiego, Warszawa",
+			"years": "2022 - Obecnie",
+			"description": "Informatyka (I stopień)"
+		},
+		{
+			"title": " 1 Liceum Ogólnokształcące, Bochnia",
+			"years": "2019 - 2022",
+			"description": " Profil z rozszerzoną Matematyką, Fizyką oraz Angielskim"
+		}
+	],
+	"technicalSkills": [
+		"Frontend development: HTML, CSS, Tailwind CSS, SCSS",
+		"JavaScript",
+		"React JS",
+		"Podstawy praktycznego użycia języków: Python, SQL, C#",
+		"Podstawy Linux RHEL",
+		"Prawo jazdy kat, B"
+	],
+	"additionalSkills": {
+		"languages": ["Polski (ojczysty)", "Angielski (C1)"],
+		"certificates": [
+			"Red Hat System Administration I (RH124) (certificate of attendance)",
+			"Red Hat System Administration II (RH134) (certificate of attendance)"
+		]
+	}
+}
