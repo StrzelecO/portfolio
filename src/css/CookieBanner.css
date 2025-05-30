@@ -80,7 +80,7 @@
   }
 }
 
-/* Wersje responsywne */
+/* Responsive styles */
 @media (min-width: 768px) {
   .cookie-banner-container {
     flex-direction: row;

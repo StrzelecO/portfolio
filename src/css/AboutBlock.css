@@ -1,60 +1,100 @@
-.about-block {
-  background-color: var(--color-primary-dark);
-  padding: 1rem;
-  border-radius: 1rem;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 
-              0 4px 6px -2px rgba(0, 0, 0, 0.05);
-}
-
-.about-block-header {
-  display: flex;
-  align-items: center;
-  margin-bottom: 1rem;
-}
-
-.about-block-dot {
-  background-color: var(--color-accent-teal);
-  border-radius: 50%;
-  margin-right: 0.75rem;
-}
-
-.about-block-dot--small {
-  width: 1rem;
-  height: 1rem;
-}
-
-.about-block-dot--medium {
-  width: 1.25rem;
-  height: 1.25rem;
-}
-
-.about-block-dot--large {
-  width: 1.5rem;
-  height: 1.5rem;
-}
-
-.about-block-title {
+.cookie-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--color-cookie-banner-primary);
   color: var(--color-text-light);
-  font-weight: 600;
+  padding: 1rem;
+  box-shadow: 0 -4px 6px -1px rgba(0, 0, 0, 0.1), 
+              0 -2px 4px -1px rgba(0, 0, 0, 0.06);
+  z-index: 50;
+  animation: fade-in-up 0.3s ease-out;
 }
 
-/* Wersje responsywne */
+.cookie-banner-container {
+  max-width: 72rem;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.cookie-banner-message {
+  font-size: 0.875rem;
+  text-align: center;
+}
+
+.cookie-banner-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  max-width: 300px;
+}
+
+.cookie-banner-button {
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+}
+
+.cookie-banner-button:hover {
+  opacity: 0.8;
+}
+
+.cookie-banner-decline {
+  border: 1px solid var(--color-primary-light);
+  background: transparent;
+  color: var(--color-text-light);
+}
+
+.cookie-banner-accept {
+  background-color: var(--color-cookie-banner-btn);
+  border: none;
+  color: var(--color-text-light);
+}
+
+/* Responsive styles */
 @media (min-width: 768px) {
-  .about-block {
-    padding: 1.5rem;
+  .cookie-banner-container {
+    flex-direction: row;
+    align-items: center;
   }
   
-  .about-block-header {
-    margin-bottom: 1.5rem;
+  .cookie-banner-message {
+    text-align: left;
+    font-size: 1rem;
+    flex: 1;
+    padding-right: 2rem;
   }
   
-  .about-block-title {
-    font-size: 1.125rem;
+  .cookie-banner-buttons {
+    flex-direction: row;
+    max-width: none;
+    width: auto;
+  }
+
+  .cookie-banner-button {
+    min-width: 120px;
   }
 }
 
-@media (min-width: 1024px) {
-  .about-block-title {
-    font-size: 1.5rem;
+/* Animations */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
