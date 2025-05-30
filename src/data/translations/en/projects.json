@@ -25,7 +25,7 @@
 		{
 			"id": 2,
 			"title": "Water Quality Analysis",
-			"description": "ML project evaluating water potability using classification. Compared ML models for consumption prediction.",
+			"description": "Evaluate water potability using binary classification methods to compare machine learning models' effectiveness in predicting safe drinking water.",
 			"keywords": [
 				"Machine Learning",
 				"Python",

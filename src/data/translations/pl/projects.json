@@ -11,7 +11,7 @@
 		{
 			"id": 1,
 			"title": "Aplikacja webowa StudentCards",
-			"description": "Aplikacja do fiszek internetowych opracowana w trzyosobowym zespole. Zawiera gry interaktywne, tworzenie fiszek i pełne CRUD.",
+			"description": "Aplikacja do fiszek internetowych opracowana w trzyosobowym zespole. Pomoga w nauce. Użytkownik może tworzyć własne zestawy kart.",
 			"keywords": [
 				"React",
 				"Tailwind CSS",
@@ -25,9 +25,9 @@
 		{
 			"id": 2,
 			"title": "Klasyfikacja binarna zdatności wody",
-			"description": "Projekt ML oceniający przydatność wody do picia przy użyciu klasyfikacji binarnej. Porównano modele ML do przewidywania jej zdatności do spożycia.",
+			"description": "Porównanie wydajności różnych modeli uczenia maszynowego i ocena ich skuteczności w przewidywaniu zdatności próbek wody do spożycia.",
 			"keywords": [
-				"Machine Learning",
+				"Uczenie maszynowe",
 				"Python",
 				"Jupyter",
 				"Analiza Danych",
