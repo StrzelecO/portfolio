@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import CVphoto from '/assets/cv_pic.png';
+import CVphoto from '/assets/cv_pic.webp'; 
 import CV_PL from '/assets/CV_Oliwia_Strzelec_PL.pdf';
 import CV_EN from '/assets/CV_Oliwia_Strzelec_EN.pdf';
 import LanguageSwitcher from '../LanguageSwitcher';
