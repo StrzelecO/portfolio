@@ -13,6 +13,9 @@ import plExperience from './pl/experience.json';
 import enContact from './en/contact.json';
 import plContact from './pl/contact.json';
 
+import enFooter from './en/footer.json';
+import plFooter from './pl/footer.json';
+
 import enCookies from './en/cookies.json';
 import plCookies from './pl/cookies.json';
 
@@ -29,6 +32,7 @@ export const resources = {
 		projects: enProjects,
 		experience: enExperience,
 		contact: enContact,
+		footer: enFooter,
 		cookies: enCookies,
 		navbar: enNavbar,
 		policies: enPolicies,
@@ -39,6 +43,7 @@ export const resources = {
 		projects: plProjects,
 		experience: plExperience,
 		contact: plContact,
+		footer: plFooter,
 		cookies: plCookies,
 		navbar: plNavbar,
 		policies: plPolicies,

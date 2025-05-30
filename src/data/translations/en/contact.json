@@ -6,21 +6,5 @@
     "github": "Oliwia Strzelec's GitHub profile",
     "linkedin": "Oliwia Strzelec's LinkedIn profile",
     "closeModal": "Close policy"
-  },
-  "footer": {
-    "copyright": "© {{year}} Oliwia Strzelec - Portfolio. All rights reserved.",
-    "privacyPolicy": "Privacy Policy",
-    "cookiePolicy": "Cookie Policy",
-    "cookieNotice": "This website uses only essential cookies for language preferences"
-  },
-  "policies": {
-    "privacy": {
-      "title": "Privacy Policy",
-      "content": "Your privacy is important to us. We don't collect personal data through this portfolio website."
-    },
-    "cookies": {
-      "title": "Cookie Policy",
-      "content": "We use only necessary cookies to remember your language preferences. No tracking cookies are used."
-    }
   }
 }

@@ -1,0 +1,18 @@
+{
+	"footer": {
+		"copyright": "© {{year}} Oliwia Strzelec - Portfolio. Wszelkie prawa zastrzeżone.",
+		"privacyPolicy": "Polityka Prywatności",
+		"cookiePolicy": "Polityka Cookies",
+		"cookieNotice": "Ta strona używa tylko niezbędnych cookies do zapisu preferencji językowych"
+	},
+	"policies": {
+		"privacy": {
+			"title": "Polityka Prywatności",
+			"content": "Twoja prywatność jest dla nas ważna. Nie zbieramy danych osobowych przez tę stronę portfolio."
+		},
+		"cookies": {
+			"title": "Polityka Cookies",
+			"content": "Używamy tylko niezbędnych cookies do zapamiętania preferencji językowych. Nie używamy cookies śledzących."
+		}
+	}
+}

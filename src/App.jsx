@@ -5,6 +5,7 @@ import AboutSection from './components/sections/AboutSection.jsx';
 import ProjectsSection from './components/sections/ProjectsSection.jsx';
 import ExperienceSection from './components/sections/ExperienceSection.jsx';
 import ContactSection from './components/sections/ContactSection.jsx';
+import FooterSection from './components/sections/FooterSection.jsx'
 import CookieBanner from './components/CookieBanner.jsx';
 
 import { useEffect } from 'react';
@@ -37,6 +38,7 @@ function App() {
 				<ProjectsSection id='projects' />
 				<ExperienceSection id='experience' />
 				<ContactSection id='contact' />
+				<FooterSection id='footer' />
 			</main>
 
 			<CookieBanner />

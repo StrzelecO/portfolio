@@ -27,6 +27,7 @@ i18n.use(initReactI18next).init({
 		'projects',
 		'experience',
 		'contact',
+		'footer',
 		'cookies',
 		'navbar',
 		'policies',
