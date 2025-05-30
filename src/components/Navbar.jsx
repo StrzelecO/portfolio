@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import '../css/Navbar.css';
 
 const SECTIONS = ['header', 'about', 'projects', 'experience', 'contact'];
 
@@ -53,12 +54,9 @@ const Navbar = () => {
 	};
 
 	return (
-		<nav
-			aria-label={t('ariaLabels.mainNav')}
-			className='fixed w-full z-50 transition-all duration-300 bg-primary-dark shadow-lg py-4'
-		>
-			<div className='container mx-auto px-4 xl:px-16'>
-				<div className='flex justify-between items-center'>
+		<nav aria-label={t('ariaLabels.mainNav')} className='navbar'>
+			<div className='navbar-container'>
+				<div className='navbar-inner'>
 					{/* Logo */}
 					<a
 						href='#header'
@@ -66,12 +64,12 @@ const Navbar = () => {
 							e.preventDefault();
 							scrollToSection('header');
 						}}
-						className='text-2xl font-bold text-text-light cursor-pointer hover:text-accent-blue transition-colors relative overflow-hidden h-[1.5em]'
+						className='navbar-logo'
 						aria-label={t('ariaLabels.home')}
 					>
 						<span
 							key={activeSection === 'header' ? 'logo' : 'name'}
-							className='block transition-opacity duration-300 ease-in-out opacity-100 animate-fade'
+							className='logo-text'
 						>
 							{activeSection === 'header' ? t('logo') : 'Oliwia Strzelec'}
 						</span>
@@ -79,21 +77,19 @@ const Navbar = () => {
 
 					{/* Desktop Navigation */}
 					<ul
-						className='hidden md:flex space-x-4'
+						className='navbar-desktop-menu'
 						role='menubar'
 						aria-label={t('ariaLabels.sections')}
 					>
 						{SECTIONS.map(section => (
-							<li key={section} role='none'>
+							<li key={section} className='navbar-menu-item' role='none'>
 								<button
 									role='menuitem'
 									aria-current={activeSection === section ? 'page' : undefined}
 									onClick={() => scrollToSection(section)}
-									className={`capitalize px-4 py-2 rounded-md text-sm font-medium transition-colors ${
-										activeSection === section
-											? 'text-accent-blue bg-primary-base'
-											: 'text-text-light hover:text-accent-teal hover:bg-primary-base'
-									} hover:cursor-pointer`}
+									className={`navbar-menu-button ${
+										activeSection === section ? 'active' : ''
+									}`}
 								>
 									{t(`sections.${section}`)}
 								</button>
@@ -102,61 +98,51 @@ const Navbar = () => {
 					</ul>
 
 					{/* Mobile menu button */}
-					<div className='md:hidden'>
-						<button
-							onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-							className='text-text-light hover:text-accent-blue focus:outline-none hover:cursor-pointer'
-							aria-label={t(
-								`ariaLabels.menuToggle.${mobileMenuOpen ? 'close' : 'open'}`
-							)}
-							aria-expanded={mobileMenuOpen}
-							aria-controls='mobile-menu'
+					<button
+						onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+						className='navbar-mobile-button'
+						aria-label={t(
+							`ariaLabels.menuToggle.${mobileMenuOpen ? 'close' : 'open'}`
+						)}
+						aria-expanded={mobileMenuOpen}
+						aria-controls='mobile-menu'
+					>
+						<svg
+							width='24'
+							height='24'
+							viewBox='0 0 24 24'
+							fill='none'
+							stroke='currentColor'
+							style={{
+								strokeWidth: 2,
+								color: 'var(--color-text-light)',
+							}}
 						>
-							<svg
-								className='h-6 w-6'
-								fill='none'
-								viewBox='0 0 24 24'
-								stroke='currentColor'
-								aria-hidden='true'
-							>
-								{mobileMenuOpen ? (
-									<path
-										strokeLinecap='round'
-										strokeLinejoin='round'
-										strokeWidth={2}
-										d='M6 18L18 6M6 6l12 12'
-									/>
-								) : (
-									<path
-										strokeLinecap='round'
-										strokeLinejoin='round'
-										strokeWidth={2}
-										d='M4 6h16M4 12h16M4 18h16'
-									/>
-								)}
-							</svg>
-						</button>
-					</div>
+							{mobileMenuOpen ? (
+								<path d='M6 18L18 6M6 6l12 12' />
+							) : (
+								<path d='M4 6h16M4 12h16M4 18h16' />
+							)}
+						</svg>
+					</button>
 				</div>
 
 				{/* Mobile Navigation */}
 				<div
 					id='mobile-menu'
-					className={`md:hidden ${mobileMenuOpen ? 'block' : 'hidden'}`}
+					className={`navbar-mobile-menu ${mobileMenuOpen ? 'open' : ''}`}
 					role='menu'
 				>
-					<ul className='px-2 pt-2 pb-4 space-y-1'>
+					<ul className='navbar-mobile-list'>
 						{SECTIONS.map(section => (
-							<li key={section} role='none'>
+							<li key={section} className='navbar-mobile-item' role='none'>
 								<button
 									role='menuitem'
 									aria-current={activeSection === section ? 'page' : undefined}
 									onClick={() => scrollToSection(section)}
-									className={`capitalize block px-3 py-2 rounded-md text-base font-medium w-full text-left ${
-										activeSection === section
-											? 'text-accent-blue bg-primary-base'
-											: 'text-text-light hover:text-accent-teal hover:bg-primary-base'
-									} hover:cursor-pointer`}
+									className={`navbar-mobile-link ${
+										activeSection === section ? 'active' : ''
+									}`}
 								>
 									{t(`sections.${section}`)}
 								</button>

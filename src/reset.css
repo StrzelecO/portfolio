@@ -1,0 +1,50 @@
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Remove list styles */
+ul, ol {
+  list-style: none;
+}
+
+/* Remove default link styles */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Remove default button styles */
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Better media defaults */
+img, video {
+  max-width: 100%;
+  display: block;
+}
+
+/* Remove form element defaults */
+input, textarea, select {
+  font: inherit;
+}
+
+/* Remove table spacing */
+table {
+  border-collapse: collapse;
+}
+
+/* Remove default fieldset styles */
+fieldset {
+  border: 0;
+}
+
+/* Remove textarea resize handle */
+textarea {
+  resize: none;
+}

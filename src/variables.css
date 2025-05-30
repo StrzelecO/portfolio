@@ -1,0 +1,29 @@
+/* styles.css - Wersja bez Tailwind, zgodna z W3C CSS3 */
+
+/* Zmienne CSS (Custom Properties) */
+:root {
+	/* Kolory podstawowe */
+	--color-primary-dark: #1a1f25;
+	--color-primary-base: #2d3a45;
+	--color-primary-light: #d1d5db;
+
+	/* Kolory akcentów */
+	--color-accent-blue: #0ea5e9;
+	--color-accent-teal: #10b981;
+
+	/* Kolory tekstu */
+	--color-text-dark: #f3f4f6;
+	--color-text-gray: #9ca3af;
+	--color-text-light: #ffffff;
+
+	/* Kolory CV */
+	--color-cv-photo: #9ca3af;
+	--color-cv-frame: #d1d5db;
+
+	/* Kolory bannerów */
+	--color-cookie-banner-primary: #000901;
+	--color-cookie-banner-btn: #0ea5d9;
+
+	--font-primary: 'Roboto', -apple-system, 'Segoe UI', Oxygen, Ubuntu, Cantarell,
+		'Open Sans', 'Helvetica Neue', sans-serif;
+}

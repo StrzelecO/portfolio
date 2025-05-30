@@ -1,6 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import AboutBlock from '../AboutBlock.jsx';
+import '../../css/AboutSection.css';
 
 const AboutSection = ({ id }) => {
   const { t } = useTranslation('about');
@@ -8,43 +9,43 @@ const AboutSection = ({ id }) => {
   return (
     <section
       id={id}
-      className='min-h-screen bg-primary-base py-16 md:pt-10 px-4 sm:px-6 lg:px-8'
+      className="about-section"
       aria-label={t('ariaLabels.section')}
     >
-      <div className='container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 py-12 md:py-20'>
-        <h2 className='text-text-light text-2xl sm:text-4xl font-bold mb-16 text-center'>
+      <div className="about-section-container">
+        <h2 className="about-section-title">
           {t('sectionTitle')}
         </h2>
 
-        <div className='grid grid-cols-1 gap-y-8'>
+        <div className="about-content-grid">
           {/* Who I Am */}
           <AboutBlock 
             title={t('titles.whoIAm')} 
             aria-label={t('ariaLabels.personalDescription')}
           >
             {t('aboutText', { returnObjects: true }).map((text, idx) => (
-              <p key={idx} className='text-text-gray mb-4 leading-relaxed'>
+              <p key={idx} className="paragraph">
                 {text}
               </p>
             ))}
           </AboutBlock>
 
           {/* Grid of 3 columns */}
-          <div className='grid grid-cols-1 md:grid-cols-3 gap-4' aria-label={t('ariaLabels.skillsEducation')}>
+          <div className="about-subgrid" aria-label={t('ariaLabels.skillsEducation')}>
             {/* Education */}
             <AboutBlock 
               title={t('titles.education')} 
-              dotSize='w-3 h-3' 
+              dotSize="small" 
               aria-label={t('ariaLabels.education')}
             >
-              <ul className='space-y-4 text-sm'>
+              <ul className="education-list">
                 {t('education', { returnObjects: true }).map((edu, idx) => (
                   <li key={idx} aria-label={t('ariaLabels.educationItem', { title: edu.title })}>
-                    <h4 className='text-accent-blue font-medium'>
+                    <h4 className="education-title">
                       {edu.title}
                     </h4>
-                    <p className='text-text-gray font-light'>{edu.years}</p>
-                    <p className='text-text-gray'>{edu.description}</p>
+                    <p className="education-years">{edu.years}</p>
+                    <p className="education-description">{edu.description}</p>
                   </li>
                 ))}
               </ul>
@@ -53,16 +54,14 @@ const AboutSection = ({ id }) => {
             {/* Technical Skills */}
             <AboutBlock 
               title={t('titles.technicalSkills')} 
-              dotSize='w-3 h-3' 
+              dotSize="small" 
               aria-label={t('ariaLabels.technicalSkills')}
             >
-              <ul className='space-y-3 text-sm'>
+              <ul className="skill-list">
                 {t('technicalSkills', { returnObjects: true }).map((skill, idx) => (
-                  <li key={idx} className='flex items-start' aria-label={t('ariaLabels.technicalSkillItem', { skill })}>
-                    <span className='text-accent-blue mr-2 leading-[1.6]'>
-                      •
-                    </span>
-                    <span className='text-text-gray'>{skill}</span>
+                  <li key={idx} className="skill-item" aria-label={t('ariaLabels.technicalSkillItem', { skill })}>
+                    <span className="skill-bullet">•</span>
+                    <span className="skill-text">{skill}</span>
                   </li>
                 ))}
               </ul>
@@ -71,25 +70,25 @@ const AboutSection = ({ id }) => {
             {/* Additional Skills */}
             <AboutBlock 
               title={t('titles.additionalSkills')} 
-              dotSize='w-3 h-3' 
+              dotSize="small" 
               aria-label={t('ariaLabels.additionalSkills')}
             >
-              <div className='space-y-4 text-sm'>
+              <div className="skill-category">
                 <div aria-label={t('ariaLabels.languages')}>
-                  <h4 className='text-accent-blue font-medium mb-1'>
+                  <h4 className="skill-category-title">
                     {t('titles.languages')}
                   </h4>
-                  <ul className='text-text-gray space-y-1'>
+                  <ul className="language-list">
                     {t('additionalSkills.languages', { returnObjects: true }).map((lang, idx) => (
                       <li key={idx} aria-label={t('ariaLabels.languageItem', { lang })}>{lang}</li>
                     ))}
                   </ul>
                 </div>
                 <div aria-label={t('ariaLabels.certificates')}>
-                  <h4 className='text-accent-blue font-medium mb-1'>
+                  <h4 className="skill-category-title">
                     {t('titles.certificates')}
                   </h4>
-                  <ul className='text-text-gray space-y-1'>
+                  <ul className="certificate-list">
                     {t('additionalSkills.certificates', { returnObjects: true }).map((cert, idx) => (
                       <li key={idx} aria-label={t('ariaLabels.certificateItem', { cert })}>{cert}</li>
                     ))}

@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import '../css/CookieBanner.css';
 
 const CookieBanner = () => {
   const [showBanner, setShowBanner] = useState(false);
@@ -21,7 +22,6 @@ const CookieBanner = () => {
   useEffect(() => {
     if (typeof window !== 'undefined' && !getCookie('cookie_consent')) {
       setShowBanner(true);
-
       setSelectedLanguage(i18n.language);
     }
   }, [i18n.language]);
@@ -58,36 +58,36 @@ const CookieBanner = () => {
 
   return (
     <div
-      role='dialog'
-      aria-modal='true'
-      aria-labelledby='cookie-banner-heading'
-      aria-describedby='cookie-banner-description'
-      className='fixed bottom-0 left-0 right-0 bg-cookie-banner-primary text-text-light p-4 shadow-lg z-50 animate-fade-in-up'
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="cookie-banner-heading"
+      aria-describedby="cookie-banner-description"
+      className="cookie-banner"
     >
-      <div className='max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4'>
+      <div className="cookie-banner-container">
         <div>
-          <h2 id='cookie-banner-heading' className='sr-only'>
+          <h2 id="cookie-banner-heading" className="sr-only">
             {t('banner.title')}
           </h2>
           <p
-            id='cookie-banner-description'
-            className='text-sm md:text-base text-center md:text-left'
+            id="cookie-banner-description"
+            className="cookie-banner-message"
           >
             {t('banner.description')}
           </p>
         </div>
 
-        <div className='flex flex-col sm:flex-row gap-4'>
+        <div className="cookie-banner-buttons">
           <button
             onClick={handleDecline}
-            className='px-4 py-2 text-sm font-medium rounded border border-primary-light hover:opacity-80 hover:cursor-pointer transition-all duration-200'
+            className="cookie-banner-button cookie-banner-decline"
             aria-label={t('banner.ariaLabels.decline')}
           >
             {t('banner.decline')}
           </button>
           <button
             onClick={handleAccept}
-            className='px-4 py-2 text-sm font-medium rounded bg-cookie-banner-btn hover:opacity-80 hover:cursor-pointer transition-all duration-200'
+            className="cookie-banner-button cookie-banner-accept"
             aria-label={t('banner.ariaLabels.accept')}
           >
             {t('banner.accept')}

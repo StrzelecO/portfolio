@@ -1,35 +1,36 @@
-@import 'tailwindcss';
+/* styles/index.css */
 
-@theme {
-	--color-primary-dark: #1a1f25;
-	--color-primary-base: #2d3a45;
-	--color-primary-light: #d1d5db;
+@import url('./reset.css');
+@import url('./variables.css');
 
-	--color-accent-blue: #0ea5e9;
-	--color-accent-teal: #10b981;
-
-	--color-text-dark: #f3f4f6;
-	--color-text-gray: #9ca3af;
-	--color-text-light: #ffffff;
-
-	--color-cv-photo: #9ca3af;
-	--color-cv-frame: #d1d5db;
-
-	--color-cookie-banner-primary: #000901;
-	--color-cookie-banner-btn: #0ea5d9;
+body {
+	font-family: var(--font-primary);
+	font-size: 16px;
+	line-height: 1.5;
+	color: var(--color-text-dark);
+	background-color: var(--color-primary-dark);
 }
 
-@keyframes fade {
-  from {
-    opacity: 0;
-    transform: translateY(5px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+input,
+textarea,
+select,
+button {
+	font-family: inherit;
 }
 
-.animate-fade {
-  animation: fade 0.3s ease-in-out;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: 600;
+	line-height: 1.2;
+	color: var(--color-text-light);
+}
+
+@media (max-width: 768px) {
+	body {
+		font-size: 15px;
+	}
 }

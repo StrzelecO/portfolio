@@ -1,0 +1,81 @@
+.policy-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.policy-modal {
+  background-color: var(--color-primary-dark);
+  border-radius: 0.5rem;
+  max-width: 28rem;
+  width: 100%;
+  padding: 1.5rem;
+  max-height: 80vh;
+  overflow-y: auto;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.policy-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.policy-modal-title {
+  color: var(--color-text-light);
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+
+.policy-modal-close {
+  color: var(--color-text-gray);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
+.policy-modal-close:hover {
+  color: var(--color-text-light);
+}
+
+.policy-modal-content {
+  font-size: 0.875rem;
+  color: var(--color-text-gray);
+}
+
+.policy-section {
+  margin-bottom: 1rem;
+}
+
+.policy-section-heading {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.policy-table {
+  width: 100%;
+  margin-bottom: 1rem;
+  border-collapse: collapse;
+}
+
+.policy-table th,
+.policy-table td {
+  padding: 0.5rem;
+  text-align: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.policy-list {
+  list-style-type: disc;
+  padding-left: 1.25rem;
+  margin-top: 0.5rem;
+}

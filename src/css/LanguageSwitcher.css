@@ -1,0 +1,49 @@
+.language-switcher {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.25rem;
+  background-color: var(--color-primary-base);
+  border-radius: 9999px;
+}
+
+.language-btn {
+  position: relative;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  border: none;
+}
+
+.language-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.language-btn-active {
+  background-color: var(--color-accent-blue);
+  color: var(--color-text-light);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.language-btn-inactive {
+  color: var(--color-text-gray);
+}
+
+.language-btn-inactive:hover {
+  background-color: var(--color-primary-light);
+}
+
+.active-indicator {
+  position: absolute;
+  left: 50%;
+  bottom: -0.25rem;
+  height: 0.125rem;
+  width: 1rem;
+  background-color: var(--color-accent-teal);
+  border-radius: 9999px;
+  transform: translateX(-50%);
+}

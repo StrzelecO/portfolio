@@ -5,7 +5,7 @@ import AboutSection from './components/sections/AboutSection.jsx';
 import ProjectsSection from './components/sections/ProjectsSection.jsx';
 import ExperienceSection from './components/sections/ExperienceSection.jsx';
 import ContactSection from './components/sections/ContactSection.jsx';
-import FooterSection from './components/sections/FooterSection.jsx'
+import FooterSection from './components/sections/FooterSection.jsx';
 import CookieBanner from './components/CookieBanner.jsx';
 
 import { useEffect } from 'react';
@@ -14,7 +14,6 @@ import { useTranslation } from 'react-i18next';
 function App() {
 	const { i18n } = useTranslation();
 
-	
 	useEffect(() => {
 		const cookieConsent = document.cookie.includes('cookie_consent=accepted');
 		if (!cookieConsent) return;
@@ -29,7 +28,7 @@ function App() {
 		}
 	}, [i18n]);
 	return (
-		<div className='relative'>
+		<div>
 			<Navbar />
 
 			<main>
