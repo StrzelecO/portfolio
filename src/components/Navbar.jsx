@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 
-const SECTIONS = ['about', 'projects', 'experience', 'contact'];
+const SECTIONS = ['header', 'about', 'projects', 'experience', 'contact'];
 
 const Navbar = () => {
 	const [activeSection, setActiveSection] = useState('header');
@@ -10,9 +10,13 @@ const Navbar = () => {
 
 	useEffect(() => {
 		const handleScroll = () => {
-			const scrollPosition = window.scrollY + window.innerHeight * 0.3;
+			const scrollPosition = window.scrollY + window.innerHeight / 2;
 			const documentHeight = document.documentElement.scrollHeight;
-			let newActiveSection = activeSection;
+
+			if (window.scrollY < 100) {
+				setActiveSection('header');
+				return;
+			}
 
 			if (window.innerHeight + window.scrollY >= documentHeight - 100) {
 				setActiveSection('contact');
@@ -24,23 +28,18 @@ const Navbar = () => {
 				const element = document.getElementById(section);
 				if (element) {
 					const { offsetTop, offsetHeight } = element;
-					if (
-						scrollPosition >=
-						offsetTop + (section === 'contact' ? 0 : offsetHeight * 0.3)
-					) {
-						newActiveSection = section;
+					if (scrollPosition >= offsetTop + offsetHeight * 0.3) {
+						setActiveSection(section);
 						break;
 					}
 				}
 			}
-
-			setActiveSection(newActiveSection);
 		};
 
 		window.addEventListener('scroll', handleScroll);
 		handleScroll();
 		return () => window.removeEventListener('scroll', handleScroll);
-	}, [activeSection]);
+	}, []);
 
 	const scrollToSection = sectionId => {
 		const element = document.getElementById(sectionId);
@@ -56,7 +55,7 @@ const Navbar = () => {
 	return (
 		<nav
 			aria-label={t('ariaLabels.mainNav')}
-			className={`fixed w-full z-50 transition-all duration-300 bg-primary-dark shadow-lg py-4`}
+			className='fixed w-full z-50 transition-all duration-300 bg-primary-dark shadow-lg py-4'
 		>
 			<div className='container mx-auto px-4 xl:px-16'>
 				<div className='flex justify-between items-center'>
@@ -67,10 +66,15 @@ const Navbar = () => {
 							e.preventDefault();
 							scrollToSection('header');
 						}}
-						className='text-2xl font-bold text-text-light cursor-pointer hover:text-accent-blue transition-colors'
+						className='text-2xl font-bold text-text-light cursor-pointer hover:text-accent-blue transition-colors relative overflow-hidden h-[1.5em]'
 						aria-label={t('ariaLabels.home')}
 					>
-						{t('logo')}
+						<span
+							key={activeSection === 'header' ? 'logo' : 'name'}
+							className='block transition-opacity duration-300 ease-in-out opacity-100 animate-fade'
+						>
+							{activeSection === 'header' ? t('logo') : 'Oliwia Strzelec'}
+						</span>
 					</a>
 
 					{/* Desktop Navigation */}

@@ -15,7 +15,7 @@ const HeaderSection = () => {
 	return (
 		<section
 			id='header'
-			className='min-h-screen bg-primary-dark flex items-center justify-center py-16 relative'
+			className='min-h-screen bg-primary-dark flex items-center justify-center py-16 px-4 relative'
 			aria-label={t('ariaLabels.section')}
 		>
 			<div className='absolute top-20 right-6 z-10'>
