@@ -7,7 +7,26 @@ import ExperienceSection from './components/sections/ExperienceSection.jsx';
 import ContactSection from './components/sections/ContactSection.jsx';
 import CookieBanner from './components/CookieBanner.jsx';
 
+import { useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
+
 function App() {
+	const { i18n } = useTranslation();
+
+	
+	useEffect(() => {
+		const cookieConsent = document.cookie.includes('cookie_consent=accepted');
+		if (!cookieConsent) return;
+
+		const savedLang = document.cookie
+			.split('; ')
+			.find(row => row.startsWith('i18n_lang='))
+			?.split('=')[1];
+
+		if (savedLang && i18n.languages.includes(savedLang)) {
+			i18n.changeLanguage(savedLang);
+		}
+	}, [i18n]);
 	return (
 		<div className='relative'>
 			<Navbar />
@@ -20,7 +39,7 @@ function App() {
 				<ContactSection id='contact' />
 			</main>
 
-      <CookieBanner />
+			<CookieBanner />
 		</div>
 	);
 }

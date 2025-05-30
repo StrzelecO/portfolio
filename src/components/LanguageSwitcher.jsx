@@ -12,12 +12,17 @@ function LanguageSwitcher() {
 		setIsChanging(true);
 		try {
 			await changeLanguageWithLoading(lng);
+			const hasConsent = document.cookie.includes('cookie_consent=accepted');
+			if (hasConsent) {
+				document.cookie = `i18n_lang=${lng}; path=/; max-age=${
+					30 * 24 * 60 * 60
+				}; SameSite=Lax`;
+			}
 		} finally {
 			setIsChanging(false);
 		}
 	};
 
-	// Add keyboard navigation
 	const handleKeyDown = (e, lng) => {
 		if (e.key === 'Enter' || e.key === ' ') {
 			e.preventDefault();
