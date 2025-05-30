@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import PolicyModal from '../PolicyModal';
 
-const ContactSection = ({ id }) => {
+const FooterSection = ({ id }) => {
 	const [modal, setModal] = useState(null);
 	const { t } = useTranslation('footer');
 
@@ -39,4 +39,4 @@ const ContactSection = ({ id }) => {
 	);
 };
 
-export default ContactSection;
+export default FooterSection;
